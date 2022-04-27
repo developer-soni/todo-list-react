@@ -19,22 +19,21 @@ const EditTask = ({ modal, toggle, updateTask, taskObj }) => {
     }
   };
 
-  useEffect(()=>{
-      setTitle(taskObj.Name)
-      setDescription(taskObj.Description)
-      setCategory(taskObj.Category)
-  }, [])
+  useEffect(() => {
+    setTitle(taskObj.Name);
+    setDescription(taskObj.Description);
+    setCategory(taskObj.Category);
+  }, []);
 
-  const handleUpdate = (e)=>{
-      e.preventDefault();
-      let tempObj ={};
-      tempObj['Name'] = title;
-      tempObj['Description'] = description;
-      tempObj['Category'] = category;
+  const handleUpdate = (e) => {
+    e.preventDefault();
+    let tempObj = {};
+    tempObj["Name"] = title;
+    tempObj["Description"] = description;
+    tempObj["Category"] = category;
 
-      updateTask(tempObj);
-
-  }
+    updateTask(tempObj);
+  };
 
   return (
     <>

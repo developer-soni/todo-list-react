@@ -19,19 +19,18 @@ const Home = () => {
   const deleteTask = (index) => {
     let tempList = taskList;
     tempList.splice(index, 1);
-    localStorage.setItem("taskList", JSON.stringify(tempList))
+    localStorage.setItem("taskList", JSON.stringify(tempList));
     setTaskList(tempList);
     window.location.reload();
   };
 
-  const updateArray = (item, index) =>{
+  const updateArray = (item, index) => {
     let tempList = taskList;
     tempList[index] = item;
-    localStorage.setItem("taskList", JSON.stringify(tempList))
+    localStorage.setItem("taskList", JSON.stringify(tempList));
     setTaskList(tempList);
     window.location.reload();
-
-  }
+  };
 
   const toggle = () => {
     setModal(!modal);
@@ -54,9 +53,16 @@ const Home = () => {
           Add Task
         </button>
       </div>
+
       <div className="task-container tasklistcont">
         {taskList.map((item, index) => (
-          <Cards item={item} index={index} key={uuidv4()} deleteTask={deleteTask} updateArray={updateArray} />
+          <Cards
+            item={item}
+            index={index}
+            key={uuidv4()}
+            deleteTask={deleteTask}
+            updateArray={updateArray}
+          />
         ))}
       </div>
       <PopUp toggle={toggle} modal={modal} save={saveTask} />
