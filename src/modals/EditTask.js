@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
-const PopUp = ({ modal, toggle, save }) => {
+const EditTask = ({ modal, toggle, updateTask, taskObj }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [category, setCategory] = useState("");
@@ -19,24 +19,27 @@ const PopUp = ({ modal, toggle, save }) => {
     }
   };
 
-  const handleSave = () => {
-    let taskObj = {};
-    taskObj["Name"] = title;
-    taskObj["Description"] = description;
-    taskObj["Category"] = category;
+  useEffect(()=>{
+      setTitle(taskObj.Name)
+      setDescription(taskObj.Description)
+      setCategory(taskObj.Category)
+  }, [])
 
-    save(taskObj);
+  const handleUpdate = (e)=>{
+      e.preventDefault();
+      let tempObj ={};
+      tempObj['Name'] = title;
+      tempObj['Description'] = description;
+      tempObj['Category'] = category;
 
-    //to clear form on every 'Save' click
-    setTitle("");
-    setDescription("");
-    setCategory("");
-  };
+      updateTask(tempObj);
+
+  }
 
   return (
     <>
       <Modal isOpen={modal} toggle={toggle} animation="false">
-        <ModalHeader toggle={toggle}>Create Task</ModalHeader>
+        <ModalHeader toggle={toggle}>Update Task</ModalHeader>
         <ModalBody>
           <form>
             <div className="form-group mb-2">
@@ -79,8 +82,8 @@ const PopUp = ({ modal, toggle, save }) => {
           </form>
         </ModalBody>
         <ModalFooter>
-          <Button color="primary" onClick={handleSave}>
-            Save
+          <Button color="primary" onClick={handleUpdate}>
+            Update
           </Button>{" "}
           <Button color="secondary" onClick={toggle}>
             Cancel
@@ -91,4 +94,4 @@ const PopUp = ({ modal, toggle, save }) => {
   );
 };
 
-export default PopUp;
+export default EditTask;

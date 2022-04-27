@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
+import EditTask from "../modals/EditTask";
 
-const Cards = ({ item, index, deleteTask }) => {
+const Cards = ({ item, index, deleteTask, updateArray }) => {
     let a=0;
     if(item.Category){
        a = parseInt(item.Category);
     }
+
+  const[modal, setModal] = useState(false);
   const colors = [
     {
         primaryColor : "#000",
@@ -28,6 +31,13 @@ const Cards = ({ item, index, deleteTask }) => {
         deleteTask(index);
     }
 
+    const toggle = () =>{
+        setModal(!modal);
+    }
+    const updateTask = (obj)=>{
+        updateArray(obj, index);
+    }
+
   return (
     <div
       className="card"
@@ -44,11 +54,12 @@ const Cards = ({ item, index, deleteTask }) => {
           <i
             className="far fa-edit"
             style={{ color: "black", "marginRight": "15px", "cursor": "pointer"}}
-            
+            onClick={()=> setModal(true)}
           ></i>
           <i className="fas fa-trash-alt" style={{ "color": "black" , "cursor": "pointer"}} onClick={handleDelete}></i>
         </div>
       </div>
+      <EditTask modal={modal} toggle={toggle} updateTask={updateTask} taskObj={item}/>
     </div>
   );
 };

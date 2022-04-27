@@ -24,6 +24,15 @@ const Home = () => {
     window.location.reload();
   };
 
+  const updateArray = (item, index) =>{
+    let tempList = taskList;
+    tempList[index] = item;
+    localStorage.setItem("taskList", JSON.stringify(tempList))
+    setTaskList(tempList);
+    window.location.reload();
+
+  }
+
   const toggle = () => {
     setModal(!modal);
   };
@@ -47,7 +56,7 @@ const Home = () => {
       </div>
       <div className="task-container tasklistcont">
         {taskList.map((item, index) => (
-          <Cards item={item} index={index} key={uuidv4()} deleteTask={deleteTask} />
+          <Cards item={item} index={index} key={uuidv4()} deleteTask={deleteTask} updateArray={updateArray} />
         ))}
       </div>
       <PopUp toggle={toggle} modal={modal} save={saveTask} />
