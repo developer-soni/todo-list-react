@@ -34,6 +34,11 @@ const PopUp = ({ modal, toggle, save }) => {
     taskObj["Category"] = category;
 
     save(taskObj);
+
+    //to clear form on every 'Save' click
+    setTitle("");
+    setDescription("");
+    setCategory("");
   };
 
   return (
