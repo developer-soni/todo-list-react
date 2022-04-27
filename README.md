@@ -1,3 +1,30 @@
+# Description : Dev.eloper's ToDo List
+
+* A custom todo list
+* Each task contains : Title, Description, Category
+* Tasks are segregated into Categories and color coded 
+* Categories are : Not-Started, In-Progress, Completed & No Category
+* Categories are color coded : Red, Yellow, Green & White respectively
+* User can Edit all elements of tasks and also change the Status/ Category
+* User can Delete each task
+## Tools
+* Built using React, Bootstrap, Font-Awesome icons & some components from Reactstrap. 
+* Utilized useState and useEffect hooks to effictively edit and save data. 
+* Stored data into localStorage. Also maintains the state if refreshed. 
+* Divided homescreen into components : Home > Cards > EditTask > PopUp.
+* Also utilizedUUIDv4 npm library to add unique keys to elements. 
+<br/>
+
+* All code progress can be viewed in Commit history. 
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
