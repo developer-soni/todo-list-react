@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter} from "reactstrap";
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 
 const PopUp = ({ modal, toggle, save }) => {
   const [title, setTitle] = useState("");
@@ -12,25 +12,29 @@ const PopUp = ({ modal, toggle, save }) => {
 
     // const {name, value} = e.target;
 
-    if(name === "title"){
-        setTitle(value)
-    }
-    else if(description === "description"){
-        setDescription(value)
-    }
-    else{
-        setCategory(category)
+    if (name === "title") {
+      setTitle(value);
+    } else {
+      setDescription(value);
     }
   };
+  //   const handleCat = (e) => {
+  //     const cat = e.target.name;
+  //     const value = e.target.value;
+  //     // const cat = e.target.category;
+  //     if(cat === "1")
+  //       setCategory(value);
 
-  const handleSave = () =>{
-      let taskObj = {}
-      taskObj["Name"] = title;
-      taskObj["Description"] = description;
-      taskObj["Category"] = category;
+  //   };
 
-      save(taskObj)
-  }
+  const handleSave = () => {
+    let taskObj = {};
+    taskObj["Name"] = title;
+    taskObj["Description"] = description;
+    taskObj["Category"] = category;
+
+    save(taskObj);
+  };
 
   return (
     <>
@@ -38,49 +42,36 @@ const PopUp = ({ modal, toggle, save }) => {
         <ModalHeader toggle={toggle}>Create Task</ModalHeader>
         <ModalBody>
           <form>
-            <div className="form-floating mb-2">
+            <div className="form-group">
+              <label>Task Title</label>
               <input
-                type="textarea"
+                type="text"
                 className="form-control"
-                id="floatingInput"
-                placeholder="Add Task Title here"
                 value={title}
                 onChange={handleChange}
                 name="title"
-              ></input>
-              <label htmlFor="floatingInput">Task Title</label>
+              />
             </div>
-            <div className="form-floating mb-2">
-              <textArea
-                type="textarea"
+            <div className="form-group">
+              <label>Description</label>
+              <textarea
+                rows="5"
                 className="form-control"
-                placeholder="Add description here"
-                id="floatingTextarea"
-                style={{ height: "100px" }}
                 value={description}
                 onChange={handleChange}
                 name="description"
-              ></textArea>
-              <label htmlFor="floatingTextarea">Description</label>
+              ></textarea>
             </div>
-            {/* <Button color="danger" value={category} onChange={handleChange}>
-              Not Started
-            </Button>{" "}
-            <Button color="warning" value={category} onChange={handleChange}>
-              In-Progress
-            </Button>{" "}
-            <Button color="success" value={category} onChange={handleChange}>
-              Done
-            </Button> */}
-
             <select
               className="form-select dropdown"
-            //   aria-label="Default select example"
-            //   value={category}
-              onChange={handleChange}
-              name="category"
+              aria-label="Default select example"
+              value={category}
+              onChange={(e) => {
+                const select = e.target.value;
+                setCategory(select);
+              }}
             >
-              <option defaultValue="1">Not Started</option>
+              <option value="1">Not Started</option>
               <option value="2">In Progress</option>
               <option value="3">Done</option>
             </select>
