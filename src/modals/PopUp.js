@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, FormGroup, Label, Input } from "reactstrap";
 
 const PopUp = ({ modal, toggle, save }) => {
   const [title, setTitle] = useState("");
@@ -42,7 +42,7 @@ const PopUp = ({ modal, toggle, save }) => {
         <ModalHeader toggle={toggle}>Create Task</ModalHeader>
         <ModalBody>
           <form>
-            <div className="form-group">
+            <div className="form-group mb-2">
               <label>Task Title</label>
               <input
                 type="text"
@@ -52,7 +52,7 @@ const PopUp = ({ modal, toggle, save }) => {
                 name="title"
               />
             </div>
-            <div className="form-group">
+            <div className="form-group mb-2">
               <label>Description</label>
               <textarea
                 rows="5"
@@ -62,6 +62,8 @@ const PopUp = ({ modal, toggle, save }) => {
                 name="description"
               ></textarea>
             </div>
+            <div className="form-group">
+                <label>Task Status</label>
             <select
               className="form-select dropdown"
               aria-label="Default select example"
@@ -71,10 +73,13 @@ const PopUp = ({ modal, toggle, save }) => {
                 setCategory(select);
               }}
             >
+              <option value="">Please Select</option>
               <option value="1">Not Started</option>
               <option value="2">In Progress</option>
               <option value="3">Done</option>
             </select>
+            </div>
+
           </form>
         </ModalBody>
         <ModalFooter>
