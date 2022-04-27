@@ -4,3 +4,15 @@
   background-color: black;
   color: white;
 }
+.tasklistcont{
+  display: flex;
+  flex-direction: row;
+  padding: 50px;
+  flex-wrap: wrap;
+}
+
+
+.iconx{
+ font-size: 2rem;
+  color: cornflowerblue;
+}

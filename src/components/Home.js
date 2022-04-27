@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PopUp from "../modals/PopUp";
 import { v4 as uuidv4 } from "uuid";
+import Cards from "./Cards";
 
 const Home = () => {
   const [modal, setModal] = useState(false);
@@ -36,13 +37,14 @@ const Home = () => {
           Add Task
         </button>
       </div>
-      <div className="task-container">
+      <div className="task-container tasklistcont">
         {taskList.map((item, index) => (
-          <ul key={uuidv4()}>
-            <li key={uuidv4()}>{item.Name}</li>
-            <li key={uuidv4()}>{item.Description}</li>
-            <li key={uuidv4()}>{item.Category}</li>
-          </ul>
+        //   <ul key={uuidv4()}>
+        //     <li key={uuidv4()}>{item.Name}</li>
+        //     <li key={uuidv4()}>{item.Description}</li>
+        //     <li key={uuidv4()}>{item.Category}</li>
+        //   </ul>
+          <Cards item={item} index={index}/>
         ))}
       </div>
       <PopUp toggle={toggle} modal={modal} save={saveTask} />
