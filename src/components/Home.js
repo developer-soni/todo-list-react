@@ -7,14 +7,22 @@ const Home = () => {
   const [modal, setModal] = useState(false);
   const [taskList, setTaskList] = useState([]);
 
-  useEffect(()=>{
-      let arr = localStorage.getItem("taskList");
+  useEffect(() => {
+    let arr = localStorage.getItem("taskList");
 
-      if(arr){
-          let obj = JSON.parse(arr);
-          setTaskList(obj)
-      }
-  },[])
+    if (arr) {
+      let obj = JSON.parse(arr);
+      setTaskList(obj);
+    }
+  }, []);
+
+  const deleteTask = (index) => {
+    let tempList = taskList;
+    tempList.splice(index, 1);
+    localStorage.setItem("taskList", JSON.stringify(tempList))
+    setTaskList(tempList);
+    window.location.reload();
+  };
 
   const toggle = () => {
     setModal(!modal);
@@ -39,7 +47,7 @@ const Home = () => {
       </div>
       <div className="task-container tasklistcont">
         {taskList.map((item, index) => (
-          <Cards item={item} index={index} key={uuidv4()}/>
+          <Cards item={item} index={index} key={uuidv4()} deleteTask={deleteTask} />
         ))}
       </div>
       <PopUp toggle={toggle} modal={modal} save={saveTask} />
