@@ -1,10 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PopUp from "../modals/PopUp";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 const Home = () => {
   const [modal, setModal] = useState(false);
   const [taskList, setTaskList] = useState([]);
+
+  useEffect(()=>{
+      let arr = localStorage.getItem("taskList");
+
+      if(arr){
+          let obj = JSON.parse(arr);
+          setTaskList(obj)
+      }
+  },[])
 
   const toggle = () => {
     setModal(!modal);
@@ -13,6 +22,8 @@ const Home = () => {
   const saveTask = (taskObj) => {
     let tempList = taskList;
     tempList.push(taskObj);
+    localStorage.setItem("taskList", JSON.stringify(tempList));
+
     setTaskList(tempList);
     setModal(false);
   };
