@@ -9,7 +9,7 @@
 * User can Delete each task
 ## Tools
 * Built using React, Bootstrap, Font-Awesome icons & some components from Reactstrap. 
-* Utilized useState and useEffect hooks to effictively edit and save data. 
+* Utilized useState and useEffect hooks to effectively edit and save data. 
 * Stored data into localStorage. Also maintains the state if refreshed. 
 * Divided homescreen into components : Home > Cards > EditTask > PopUp.
 * Also utilizedUUIDv4 npm library to add unique keys to elements. 
