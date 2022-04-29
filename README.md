@@ -1,27 +1,34 @@
-# Description : Dev.eloper's ToDo List
+# ToDo List + Notes App
 
-* A custom todo list
-* Each task contains : Title, Description, Category
-* Tasks are segregated into Categories and color coded 
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+![Bootstrap](https://img.shields.io/badge/bootstrap-%23563D7C.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
+![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+[![Licence](https://img.shields.io/github/license/Ileriayo/markdown-badges?style=for-the-badge)](./LICENSE)
+
+## Deployed on GH-Pages
+https://developer-soni.github.io/todo-list-react
+
+## Description
+* A custom todo list (also a Notes App + Trello Feature to add Current Status)
+* Each task contains : Title, Description, Category 
 * Categories are : Not-Started, In-Progress, Completed & No Category
 * Categories are color coded : Red, Yellow, Green & White respectively
-* User can Edit all elements of tasks and also change the Status/ Category
-* User can Delete each task
-## Tools
-* Built using React, Bootstrap, Font-Awesome icons & some components from Reactstrap. 
-* Utilized useState and useEffect hooks to effectively edit and save data. 
-* Stored data into localStorage. Also maintains the state if refreshed. 
-* Divided homescreen into components : Home > Cards > EditTask > PopUp.
-* Also utilizedUUIDv4 npm library to add unique keys to elements. 
+* Users can Edit all elements of tasks and also change the Status/ Category
+* Users can Delete each task
+
+### Tools Used
+* Built using React, Bootstrap, Font-Awesome Icons & Modal component from Reactstrap 
+* Utilized useState and useEffect hooks to effectively edit and save data
+* Stored data into localStorage 
+* Maintains the state if refreshed 
+* Divided homescreen into components : Home > Cards > EditTask > PopUp
+* Also utilized UUIDv4 npm library to add unique keys to elements 
 <br/>
+* All code progress can be viewed in Commit history 
 
-* All code progress can be viewed in Commit history. 
-
-
+## Screenshot of the Web App
 <img src="https://github.com/developer-soni/todo-list-react/blob/master/Screen%20Shot%202022-04-27%20at%202.19.21%20PM.png">
-
-
-
 
 
 
@@ -55,43 +62,3 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
